@@ -22,8 +22,7 @@
 		<item id="relationships" media-type="text/x-oeb1-document" href="relationships.html"></item>
 		<item id="normalization" media-type="text/x-oeb1-document" href="normalization.html"></item>
 		<item id="querying" media-type="text/x-oeb1-document" href="querying.html"></item>
-		<item id="indexing" media-type="text/x-oeb1-document" href="indexing.html"></item>
-		<item id="optimization" media-type="text/x-oeb1-document" href="optimization.html"></item>
+		<item id="indexing" media-type="text/x-oeb1-document" href="indexing-optimization.html"></item>
 		<item id="options" media-type="text/x-oeb1-document" href="options.html"></item>
 		<item id="beyond-fundamentals" media-type="text/x-oeb1-document" href="beyond-fundamentals.html"></item>
 
