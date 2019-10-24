@@ -16,9 +16,8 @@
 <navPoint id="navpoint-6" playOrder="6"><navLabel><text>Relationships</text></navLabel><content src="relationships.html"/></navPoint>
 <navPoint id="navpoint-7" playOrder="7"><navLabel><text>Normalization</text></navLabel><content src="normalization.html"/></navPoint>
 <navPoint id="navpoint-8" playOrder="8"><navLabel><text>Querying</text></navLabel><content src="querying.html"/></navPoint>
-<navPoint id="navpoint-9" playOrder="9"><navLabel><text>Indexing</text></navLabel><content src="indexing.html"/></navPoint>
-<navPoint id="navpoint-10" playOrder="10"><navLabel><text>Optimization</text></navLabel><content src="optimization.html"/></navPoint>
-<navPoint id="navpoint-11" playOrder="11"><navLabel><text>Options</text></navLabel><content src="options.html"/></navPoint>
-<navPoint id="navpoint-12" playOrder="12"><navLabel><text>Beyond fundamentals</text></navLabel><content src="beyond-fundamentals.html"/></navPoint>
+<navPoint id="navpoint-9" playOrder="9"><navLabel><text>Indexing and optimization</text></navLabel><content src="indexing-optimization.html"/></navPoint>
+<navPoint id="navpoint-10" playOrder="10"><navLabel><text>Database options</text></navLabel><content src="database-options.html"/></navPoint>
+<navPoint id="navpoint-11" playOrder="11"><navLabel><text>Beyond fundamentals</text></navLabel><content src="beyond-fundamentals.html"/></navPoint>
 </navMap>
 </ncx>
