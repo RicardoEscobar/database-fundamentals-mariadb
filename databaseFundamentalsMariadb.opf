@@ -42,6 +42,6 @@
 	</spine>
 	<guide>
 		<reference type="toc" title="Table of Contents" href="toc.html"/>
-		<reference type="text" title="Book" href="introduction.html"/>
+		<reference type="text" title="Introduction" href="introduction.html"/>
 	</guide>
 </package>
