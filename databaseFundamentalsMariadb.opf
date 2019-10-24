@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<package unique-identifier="uid" xmlns:opf="http://www.idpf.org/2007/opf" xmlns:asd="http://www.idpf.org/asdfaf">
+	<metadata>
+		<dc-metadata  xmlns:dc="http://purl.org/metadata/dublin_core" xmlns:oebpackage="http://openebook.org/namespaces/oeb-package/1.0/">
+			<dc:Title>Database Fundamentals with MariaDB</dc:Title>
+			<dc:Language>en</dc:Language>
+			<dc:Creator>Jorge Ricardo Escobar Carrasco</dc:Creator>
+			<dc:Copyrights>Jorge Ricardo Escobar Carrasco</dc:Copyrights>
+			<dc:Publisher>Jorge Ricardo Escobar Carrasco</dc:Publisher>
+			<x-metadata>
+				<EmbeddedCover>images/cover.jpg</EmbeddedCover>
+			</x-metadata>
+		</dc-metadata>
+	</metadata>
+	<manifest>
+		<item id="content" media-type="text/x-oeb1-document" href="toc.html"></item>
+		<item id="ncx" media-type="application/x-dtbncx+xml" href="toc.ncx"/>
+		<item id="introduction" media-type="text/x-oeb1-document" href="introduction.html"></item>
+		<item id="understanding-databases" media-type="text/x-oeb1-document" href="understanding-databases.html"></item>
+		<item id="database-fundamentals" media-type="text/x-oeb1-document" href="database-fundamentals.html"></item>
+		<item id="tables" media-type="text/x-oeb1-document" href="tables.html"></item>
+		<item id="relationships" media-type="text/x-oeb1-document" href="relationships.html"></item>
+		<item id="normalization" media-type="text/x-oeb1-document" href="normalization.html"></item>
+		<item id="querying" media-type="text/x-oeb1-document" href="querying.html"></item>
+		<item id="indexing" media-type="text/x-oeb1-document" href="indexing.html"></item>
+		<item id="optimization" media-type="text/x-oeb1-document" href="optimization.html"></item>
+		<item id="options" media-type="text/x-oeb1-document" href="options.html"></item>
+		<item id="beyond-fundamentals" media-type="text/x-oeb1-document" href="beyond-fundamentals.html"></item>
+
+	</manifest>
+	<spine toc="ncx">
+		<itemref idref="content"/>
+		<itemref idref="introduction"/>
+		<itemref idref="understanding-databases"/>
+		<itemref idref="database-fundamentals"/>
+		<itemref idref="tables"/>
+		<itemref idref="relationships"/>
+		<itemref idref="normalization"/>
+		<itemref idref="querying"/>
+		<itemref idref="indexing"/>
+		<itemref idref="optimization"/>
+		<itemref idref="options"/>
+		<itemref idref="beyond-fundamentals"/>
+	</spine>
+	<guide>
+		<reference type="toc" title="Table of Contents" href="toc.html"/>
+		<reference type="text" title="Book" href="introduction.html"/>
+	</guide>
+</package>
