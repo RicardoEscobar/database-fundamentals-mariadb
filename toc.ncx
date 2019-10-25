@@ -9,20 +9,26 @@
   </docTitle>
 <navMap>
 <navPoint id="navpoint-1" playOrder="1"><navLabel><text>Table of contents</text></navLabel><content src="toc.html#toc"/></navPoint>
-<navPoint id="navpoint-2" playOrder="2"><navLabel><text>Introduction</text></navLabel><content src="introduction.html"/></navPoint>
-<navPoint id="navpoint-3" playOrder="3"><navLabel><text>Welcome</text></navLabel><content src="introduction.html#id1"/></navPoint>
-<navPoint id="navpoint-4" playOrder="4"><navLabel><text>What you need to know</text></navLabel><content src="introduction.html#id2"/></navPoint>
-<navPoint id="navpoint-5" playOrder="5"><navLabel><text>Understanding databases</text></navLabel><content src="understanding-databases.html"/></navPoint>
-<navPoint id="navpoint-6" playOrder="6"><navLabel><text>What are databases?</text></navLabel><content src="understanding-databases.html#id1"/></navPoint>
-<navPoint id="navpoint-7" playOrder="7"><navLabel><text>Exploring databases</text></navLabel><content src="understanding-databases.html#id2"/></navPoint>
-<navPoint id="navpoint-8" playOrder="8"><navLabel><text>Database management</text></navLabel><content src="understanding-databases.html#id3"/></navPoint>
-<navPoint id="navpoint-9" playOrder="9"><navLabel><text>Database fundamentals</text></navLabel><content src="database-fundamentals.html"/></navPoint>
-<navPoint id="navpoint-10" playOrder="10"><navLabel><text>The features of a relational database</text></navLabel><content src="database-fundamentals.html#id1"/></navPoint>
-<navPoint id="navpoint-11" playOrder="11"><navLabel><text>Exploring unique values and primary keys</text></navLabel><content src="database-fundamentals.html#id2"/></navPoint>
-<navPoint id="navpoint-12" playOrder="12"><navLabel><text>Defining table relationships</text></navLabel><content src="database-fundamentals.html#id3"/></navPoint>
-<navPoint id="navpoint-13" playOrder="13"><navLabel><text>Describing many-to-many relationships</text></navLabel><content src="database-fundamentals.html#id4"/></navPoint>
-<navPoint id="navpoint-14" playOrder="14"><navLabel><text>Transactions and the ACID test</text></navLabel><content src="database-fundamentals.html#id5"/></navPoint>
-<navPoint id="navpoint-15" playOrder="15"><navLabel><text>Introduction to Structured Query Language (SQL)</text></navLabel><content src="database-fundamentals.html#id6"/></navPoint>
+<navPoint id="navpoint-2" playOrder="2"><navLabel><text>Introduction</text></navLabel><content src="introduction.html"/>
+  <navPoint id="navpoint-3" playOrder="3"><navLabel><text>Welcome</text></navLabel><content src="introduction.html#id1"/></navPoint>
+  <navPoint id="navpoint-4" playOrder="4"><navLabel><text>What you need to know</text></navLabel><content src="introduction.html#id2"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-5" playOrder="5"><navLabel><text>Understanding databases</text></navLabel><content src="understanding-databases.html"/>
+  <navPoint id="navpoint-6" playOrder="6"><navLabel><text>What are databases?</text></navLabel><content src="understanding-databases.html#id1"/></navPoint>
+  <navPoint id="navpoint-7" playOrder="7"><navLabel><text>Exploring databases</text></navLabel><content src="understanding-databases.html#id2"/></navPoint>
+  <navPoint id="navpoint-8" playOrder="8"><navLabel><text>Database management</text></navLabel><content src="understanding-databases.html#id3"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-9" playOrder="9"><navLabel><text>Database fundamentals</text></navLabel><content src="database-fundamentals.html"/>
+  <navPoint id="navpoint-10" playOrder="10"><navLabel><text>The features of a relational database</text></navLabel><content src="database-fundamentals.html#id1"/></navPoint>
+  <navPoint id="navpoint-11" playOrder="11"><navLabel><text>Exploring unique values and primary keys</text></navLabel><content src="database-fundamentals.html#id2"/></navPoint>
+  <navPoint id="navpoint-12" playOrder="12"><navLabel><text>Defining table relationships</text></navLabel><content src="database-fundamentals.html#id3"/></navPoint>
+  <navPoint id="navpoint-13" playOrder="13"><navLabel><text>Describing many-to-many relationships</text></navLabel><content src="database-fundamentals.html#id4"/></navPoint>
+  <navPoint id="navpoint-14" playOrder="14"><navLabel><text>Transactions and the ACID test</text></navLabel><content src="database-fundamentals.html#id5"/></navPoint>
+  <navPoint id="navpoint-15" playOrder="15"><navLabel><text>Introduction to Structured Query Language (SQL)</text></navLabel><content src="database-fundamentals.html#id6"/></navPoint>
+</navPoint>
+
 <navPoint id="navpoint-16" playOrder="16"><navLabel><text>Tables</text></navLabel><content src="tables.html"/></navPoint>
 <navPoint id="navpoint-17" playOrder="17"><navLabel><text>Introduction to database modeling</text></navLabel><content src="tables.html#id1"/></navPoint>
 <navPoint id="navpoint-18" playOrder="18"><navLabel><text>Planning your database</text></navLabel><content src="tables.html#id2"/></navPoint>
