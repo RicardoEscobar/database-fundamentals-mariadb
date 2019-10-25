@@ -8,7 +8,7 @@
     <text>KF8</text>
   </docTitle>
 <navMap>
-<navPoint id="navpoint-1" playOrder="1"><navLabel><text>Content</text></navLabel><content src="toc.html#toc"/></navPoint>
+<navPoint id="navpoint-1" playOrder="1"><navLabel><text>Table of contents</text></navLabel><content src="toc.html#toc"/></navPoint>
 <navPoint id="navpoint-2" playOrder="2"><navLabel><text>Introduction</text></navLabel><content src="introduction.html"/></navPoint>
 <navPoint id="navpoint-3" playOrder="3"><navLabel><text>Welcome</text></navLabel><content src="introduction.html#id1"/></navPoint>
 <navPoint id="navpoint-4" playOrder="4"><navLabel><text>What you need to know</text></navLabel><content src="introduction.html#id2"/></navPoint>
