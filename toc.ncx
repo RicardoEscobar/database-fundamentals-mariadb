@@ -9,57 +9,77 @@
   </docTitle>
 <navMap>
 <navPoint id="navpoint-1" playOrder="1"><navLabel><text>Table of contents</text></navLabel><content src="toc.html#toc"/></navPoint>
-<navPoint id="navpoint-2" playOrder="2"><navLabel><text>Introduction</text></navLabel><content src="introduction.html"/></navPoint>
-<navPoint id="navpoint-3" playOrder="3"><navLabel><text>Welcome</text></navLabel><content src="introduction.html#id1"/></navPoint>
-<navPoint id="navpoint-4" playOrder="4"><navLabel><text>What you need to know</text></navLabel><content src="introduction.html#id2"/></navPoint>
-<navPoint id="navpoint-5" playOrder="5"><navLabel><text>Understanding databases</text></navLabel><content src="understanding-databases.html"/></navPoint>
-<navPoint id="navpoint-6" playOrder="6"><navLabel><text>What are databases?</text></navLabel><content src="understanding-databases.html#id1"/></navPoint>
-<navPoint id="navpoint-7" playOrder="7"><navLabel><text>Exploring databases</text></navLabel><content src="understanding-databases.html#id2"/></navPoint>
-<navPoint id="navpoint-8" playOrder="8"><navLabel><text>Database management</text></navLabel><content src="understanding-databases.html#id3"/></navPoint>
-<navPoint id="navpoint-9" playOrder="9"><navLabel><text>Database fundamentals</text></navLabel><content src="database-fundamentals.html"/></navPoint>
-<navPoint id="navpoint-10" playOrder="10"><navLabel><text>The features of a relational database</text></navLabel><content src="database-fundamentals.html#id1"/></navPoint>
-<navPoint id="navpoint-11" playOrder="11"><navLabel><text>Exploring unique values and primary keys</text></navLabel><content src="database-fundamentals.html#id2"/></navPoint>
-<navPoint id="navpoint-12" playOrder="12"><navLabel><text>Defining table relationships</text></navLabel><content src="database-fundamentals.html#id3"/></navPoint>
-<navPoint id="navpoint-13" playOrder="13"><navLabel><text>Describing many-to-many relationships</text></navLabel><content src="database-fundamentals.html#id4"/></navPoint>
-<navPoint id="navpoint-14" playOrder="14"><navLabel><text>Transactions and the ACID test</text></navLabel><content src="database-fundamentals.html#id5"/></navPoint>
-<navPoint id="navpoint-15" playOrder="15"><navLabel><text>Introduction to Structured Query Language (SQL)</text></navLabel><content src="database-fundamentals.html#id6"/></navPoint>
-<navPoint id="navpoint-16" playOrder="16"><navLabel><text>Tables</text></navLabel><content src="tables.html"/></navPoint>
-<navPoint id="navpoint-17" playOrder="17"><navLabel><text>Introduction to database modeling</text></navLabel><content src="tables.html#id1"/></navPoint>
-<navPoint id="navpoint-18" playOrder="18"><navLabel><text>Planning your database</text></navLabel><content src="tables.html#id2"/></navPoint>
-<navPoint id="navpoint-19" playOrder="19"><navLabel><text>Identifying columns and selecting data types</text></navLabel><content src="tables.html#id3"/></navPoint>
-<navPoint id="navpoint-20" playOrder="20"><navLabel><text>Choosing primary keys</text></navLabel><content src="tables.html#id4"/></navPoint>
-<navPoint id="navpoint-21" playOrder="21"><navLabel><text>Using composite keys</text></navLabel><content src="tables.html#id5"/></navPoint>
-<navPoint id="navpoint-22" playOrder="22"><navLabel><text>Relationships</text></navLabel><content src="relationships.html"/></navPoint>
-<navPoint id="navpoint-23" playOrder="23"><navLabel><text>Creating relationships</text></navLabel><content src="relationships.html#id1"/></navPoint>
-<navPoint id="navpoint-24" playOrder="24"><navLabel><text>Defining one-to-many relationships</text></navLabel><content src="relationships.html#id2"/></navPoint>
-<navPoint id="navpoint-25" playOrder="25"><navLabel><text>Exploring one-to-one relationships</text></navLabel><content src="relationships.html#id3"/></navPoint>
-<navPoint id="navpoint-26" playOrder="26"><navLabel><text>Exploring many-to-many relationships</text></navLabel><content src="relationships.html#id4"/></navPoint>
-<navPoint id="navpoint-27" playOrder="27"><navLabel><text>Understanding relationship rules and referential integrity</text></navLabel><content src="relationships.html#id5"/></navPoint>
-<navPoint id="navpoint-28" playOrder="28"><navLabel><text>Normalization</text></navLabel><content src="normalization.html"/></navPoint>
-<navPoint id="navpoint-29" playOrder="29"><navLabel><text>Understanding normalization</text></navLabel><content src="normalization.html#id1"/></navPoint>
-<navPoint id="navpoint-30" playOrder="30"><navLabel><text>First normal form</text></navLabel><content src="normalization.html#id2"/></navPoint>
-<navPoint id="navpoint-31" playOrder="31"><navLabel><text>Second normal form</text></navLabel><content src="normalization.html#id3"/></navPoint>
-<navPoint id="navpoint-32" playOrder="32"><navLabel><text>Third normal form</text></navLabel><content src="normalization.html#id4"/></navPoint>
-<navPoint id="navpoint-33" playOrder="33"><navLabel><text>Database denormalization</text></navLabel><content src="normalization.html#id5"/></navPoint>
-<navPoint id="navpoint-34" playOrder="34"><navLabel><text>Querying</text></navLabel><content src="querying.html"/></navPoint>
-<navPoint id="navpoint-35" playOrder="35"><navLabel><text>Creating SQL queries</text></navLabel><content src="querying.html#id1"/></navPoint>
-<navPoint id="navpoint-36" playOrder="36"><navLabel><text>Structuring the WHERE clause</text></navLabel><content src="querying.html#id2"/></navPoint>
-<navPoint id="navpoint-37" playOrder="37"><navLabel><text>Sorting query results</text></navLabel><content src="querying.html#id3"/></navPoint>
-<navPoint id="navpoint-38" playOrder="38"><navLabel><text>Using aggregate functions</text></navLabel><content src="querying.html#id4"/></navPoint>
-<navPoint id="navpoint-39" playOrder="39"><navLabel><text>Joining tables</text></navLabel><content src="querying.html#id5"/></navPoint>
-<navPoint id="navpoint-40" playOrder="40"><navLabel><text>The data definition language</text></navLabel><content src="querying.html#id6"/></navPoint>
-<navPoint id="navpoint-41" playOrder="41"><navLabel><text>Indexing and optimization</text></navLabel><content src="indexing-optimization.html"/></navPoint>
-<navPoint id="navpoint-42" playOrder="42"><navLabel><text>Understanding indexes</text></navLabel><content src="indexing-optimization.html#id1"/></navPoint>
-<navPoint id="navpoint-43" playOrder="43"><navLabel><text>Understanding write conflicts</text></navLabel><content src="indexing-optimization.html#id2"/></navPoint>
-<navPoint id="navpoint-44" playOrder="44"><navLabel><text>Understanding stored procedures and injection attacks</text></navLabel><content src="indexing-optimization.html#id3"/></navPoint>
-<navPoint id="navpoint-45" playOrder="45"><navLabel><text>Database options</text></navLabel><content src="database-options.html"/></navPoint>
-<navPoint id="navpoint-46" playOrder="46"><navLabel><text>Desktop databases</text></navLabel><content src="database-options.html#id1"/></navPoint>
-<navPoint id="navpoint-47" playOrder="47"><navLabel><text>Relational database management systems</text></navLabel><content src="database-options.html#id2"/></navPoint>
-<navPoint id="navpoint-48" playOrder="48"><navLabel><text>Object-based and XML-based databases</text></navLabel><content src="database-options.html#id3"/></navPoint>
-<navPoint id="navpoint-49" playOrder="49"><navLabel><text>NoSQL databases</text></navLabel><content src="database-options.html#id4"/></navPoint>
-<navPoint id="navpoint-50" playOrder="50"><navLabel><text>Beyond fundamentals</text></navLabel><content src="beyond-fundamentals.html"/></navPoint>
-<navPoint id="navpoint-51" playOrder="51"><navLabel><text>Conclusion</text></navLabel><content src="beyond-fundamentals.html#id1"/></navPoint>
-<navPoint id="navpoint-52" playOrder="52"><navLabel><text>Next steps</text></navLabel><content src="beyond-fundamentals.html#id2"/></navPoint>
-<navPoint id="navpoint-53" playOrder="53"><navLabel><text>Good bye</text></navLabel><content src="beyond-fundamentals.html#id3"/></navPoint>
+<navPoint id="navpoint-2" playOrder="2"><navLabel><text>Introduction</text></navLabel><content src="introduction.html"/>
+  <navPoint id="navpoint-3" playOrder="3"><navLabel><text>Welcome</text></navLabel><content src="introduction.html#id1"/></navPoint>
+  <navPoint id="navpoint-4" playOrder="4"><navLabel><text>What you need to know</text></navLabel><content src="introduction.html#id2"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-5" playOrder="5"><navLabel><text>Understanding databases</text></navLabel><content src="understanding-databases.html"/>
+  <navPoint id="navpoint-6" playOrder="6"><navLabel><text>What are databases?</text></navLabel><content src="understanding-databases.html#id1"/></navPoint>
+  <navPoint id="navpoint-7" playOrder="7"><navLabel><text>Exploring databases</text></navLabel><content src="understanding-databases.html#id2"/></navPoint>
+  <navPoint id="navpoint-8" playOrder="8"><navLabel><text>Database management</text></navLabel><content src="understanding-databases.html#id3"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-9" playOrder="9"><navLabel><text>Database fundamentals</text></navLabel><content src="database-fundamentals.html"/>
+  <navPoint id="navpoint-10" playOrder="10"><navLabel><text>The features of a relational database</text></navLabel><content src="database-fundamentals.html#id1"/></navPoint>
+  <navPoint id="navpoint-11" playOrder="11"><navLabel><text>Exploring unique values and primary keys</text></navLabel><content src="database-fundamentals.html#id2"/></navPoint>
+  <navPoint id="navpoint-12" playOrder="12"><navLabel><text>Defining table relationships</text></navLabel><content src="database-fundamentals.html#id3"/></navPoint>
+  <navPoint id="navpoint-13" playOrder="13"><navLabel><text>Describing many-to-many relationships</text></navLabel><content src="database-fundamentals.html#id4"/></navPoint>
+  <navPoint id="navpoint-14" playOrder="14"><navLabel><text>Transactions and the ACID test</text></navLabel><content src="database-fundamentals.html#id5"/></navPoint>
+  <navPoint id="navpoint-15" playOrder="15"><navLabel><text>Introduction to Structured Query Language (SQL)</text></navLabel><content src="database-fundamentals.html#id6"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-16" playOrder="16"><navLabel><text>Tables</text></navLabel><content src="tables.html"/>
+  <navPoint id="navpoint-17" playOrder="17"><navLabel><text>Introduction to database modeling</text></navLabel><content src="tables.html#id1"/></navPoint>
+  <navPoint id="navpoint-18" playOrder="18"><navLabel><text>Planning your database</text></navLabel><content src="tables.html#id2"/></navPoint>
+  <navPoint id="navpoint-19" playOrder="19"><navLabel><text>Identifying columns and selecting data types</text></navLabel><content src="tables.html#id3"/></navPoint>
+  <navPoint id="navpoint-20" playOrder="20"><navLabel><text>Choosing primary keys</text></navLabel><content src="tables.html#id4"/></navPoint>
+  <navPoint id="navpoint-21" playOrder="21"><navLabel><text>Using composite keys</text></navLabel><content src="tables.html#id5"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-22" playOrder="22"><navLabel><text>Relationships</text></navLabel><content src="relationships.html"/>
+  <navPoint id="navpoint-23" playOrder="23"><navLabel><text>Creating relationships</text></navLabel><content src="relationships.html#id1"/></navPoint>
+  <navPoint id="navpoint-24" playOrder="24"><navLabel><text>Defining one-to-many relationships</text></navLabel><content src="relationships.html#id2"/></navPoint>
+  <navPoint id="navpoint-25" playOrder="25"><navLabel><text>Exploring one-to-one relationships</text></navLabel><content src="relationships.html#id3"/></navPoint>
+  <navPoint id="navpoint-26" playOrder="26"><navLabel><text>Exploring many-to-many relationships</text></navLabel><content src="relationships.html#id4"/></navPoint>
+  <navPoint id="navpoint-27" playOrder="27"><navLabel><text>Understanding relationship rules and referential integrity</text></navLabel><content src="relationships.html#id5"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-28" playOrder="28"><navLabel><text>Normalization</text></navLabel><content src="normalization.html"/>
+  <navPoint id="navpoint-29" playOrder="29"><navLabel><text>Understanding normalization</text></navLabel><content src="normalization.html#id1"/></navPoint>
+  <navPoint id="navpoint-30" playOrder="30"><navLabel><text>First normal form</text></navLabel><content src="normalization.html#id2"/></navPoint>
+  <navPoint id="navpoint-31" playOrder="31"><navLabel><text>Second normal form</text></navLabel><content src="normalization.html#id3"/></navPoint>
+  <navPoint id="navpoint-32" playOrder="32"><navLabel><text>Third normal form</text></navLabel><content src="normalization.html#id4"/></navPoint>
+  <navPoint id="navpoint-33" playOrder="33"><navLabel><text>Database denormalization</text></navLabel><content src="normalization.html#id5"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-34" playOrder="34"><navLabel><text>Querying</text></navLabel><content src="querying.html"/>
+  <navPoint id="navpoint-35" playOrder="35"><navLabel><text>Creating SQL queries</text></navLabel><content src="querying.html#id1"/></navPoint>
+  <navPoint id="navpoint-36" playOrder="36"><navLabel><text>Structuring the WHERE clause</text></navLabel><content src="querying.html#id2"/></navPoint>
+  <navPoint id="navpoint-37" playOrder="37"><navLabel><text>Sorting query results</text></navLabel><content src="querying.html#id3"/></navPoint>
+  <navPoint id="navpoint-38" playOrder="38"><navLabel><text>Using aggregate functions</text></navLabel><content src="querying.html#id4"/></navPoint>
+  <navPoint id="navpoint-39" playOrder="39"><navLabel><text>Joining tables</text></navLabel><content src="querying.html#id5"/></navPoint>
+  <navPoint id="navpoint-40" playOrder="40"><navLabel><text>The data definition language</text></navLabel><content src="querying.html#id6"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-41" playOrder="41"><navLabel><text>Indexing and optimization</text></navLabel><content src="indexing-optimization.html"/>
+  <navPoint id="navpoint-42" playOrder="42"><navLabel><text>Understanding indexes</text></navLabel><content src="indexing-optimization.html#id1"/></navPoint>
+  <navPoint id="navpoint-43" playOrder="43"><navLabel><text>Understanding write conflicts</text></navLabel><content src="indexing-optimization.html#id2"/></navPoint>
+  <navPoint id="navpoint-44" playOrder="44"><navLabel><text>Understanding stored procedures and injection attacks</text></navLabel><content src="indexing-optimization.html#id3"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-45" playOrder="45"><navLabel><text>Database options</text></navLabel><content src="database-options.html"/>
+  <navPoint id="navpoint-46" playOrder="46"><navLabel><text>Desktop databases</text></navLabel><content src="database-options.html#id1"/></navPoint>
+  <navPoint id="navpoint-47" playOrder="47"><navLabel><text>Relational database management systems</text></navLabel><content src="database-options.html#id2"/></navPoint>
+  <navPoint id="navpoint-48" playOrder="48"><navLabel><text>Object-based and XML-based databases</text></navLabel><content src="database-options.html#id3"/></navPoint>
+  <navPoint id="navpoint-49" playOrder="49"><navLabel><text>NoSQL databases</text></navLabel><content src="database-options.html#id4"/></navPoint>
+</navPoint>
+
+<navPoint id="navpoint-50" playOrder="50"><navLabel><text>Beyond fundamentals</text></navLabel><content src="beyond-fundamentals.html"/>
+  <navPoint id="navpoint-51" playOrder="51"><navLabel><text>Conclusion</text></navLabel><content src="beyond-fundamentals.html#id1"/></navPoint>
+  <navPoint id="navpoint-52" playOrder="52"><navLabel><text>Next steps</text></navLabel><content src="beyond-fundamentals.html#id2"/></navPoint>
+  <navPoint id="navpoint-53" playOrder="53"><navLabel><text>Good bye</text></navLabel><content src="beyond-fundamentals.html#id3"/></navPoint>
+</navPoint>
+
 </navMap>
 </ncx>
