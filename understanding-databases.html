@@ -11,14 +11,75 @@
 <body>
     <h1>Understanding databases</h1>
     <div class="exampleBorder">
-        <p class="null_text_indent"><span class="dropcaps1">D</span>ropcaps and intro paragraph.</p>
+        <p class="null_text_indent"><span class="dropcaps1">W</span>hat's the problem? There is data to store. You may need to store customer names and addresses, maybe a list of products and their prices, maybe just a balance sheet for accounting, maybe list of employees. Whatever it is, you have to store it somewhere. But here is the thing: you can already store data in text files and spreadsheets. So, just having data is not the problem. What comes next to having data, is the problem.</p>
     </div>
 
     <h2 id="id1">What are databases?</h2>
+        <p>Before looking at database engines and their features, you need to realize that databases where created to solve a problem. You may have some information that you may like to store, so most programmers see databases like a file to get their data into. However this is just half truth. Most databases offer solutions to not just storing data. If that was the case, you may just store the names, telephone numbers and adddress of your customers into a spreadsheet or even a text file. So just having the data is not enough reason to have a database. So, what comes next?</p>
 
-    <h2 id="id2">Exploring databases</h2>
+        <h3>Problems</h3>
+        <ul>
+            <li>Size</li>
+            <li>Updating the data</li>
+            <li>Accuracy</li>
+            <li>Security</li>
+            <li>Redundancy</li>
+            <li>Importance</li>
+        </ul>
 
-    <h2 id="id3">Database management</h2>
+        <p><span class="key">Size:</span> Many small businesses start with a spreadsheet, and continue working like that for many years. That may work perfectly when there are a thousand lines, but what happens when you get five million lines? Then it's not so quick to even open the application, let alone look for anything. Having small amounts of data is not a solution specially when the business grows. Your solution should be able to grow alongside the business.</p>
+
+        <p><span class="key">Updating the data:</span> What happens if more than one person needs to edit the spreadsheet at the same time? You may say that sharing the file may be a good idea, but you'll end up with everyone overwriting everyone else's changes. Each of them may have a copy of the spreadsheet and problem solved right? Then you step into the next problem, consolidate all those changes into a single master file that everyone needs to copy over again in order to get everyone else's changes. Just too much work, and with a lot of room for mistakes. And that's just two people, just imagine how complex it would be if there are ten people at the same time, or five hundred people at the same time.</p>
+
+        <p><span class="key">Accuracy:</span> What's preventing me from entering wrong data? what if I introduce a customer twice? what if I introduce a date where a price amount is requiered. What if I miss some important piece of information like a name or a phone number? As the business grows older, these files get insonsistent and validation of data is lackluster or non existent. You can't just trust the data.</p>
+
+        <p><span class="key">Security:</span> And just because you need to share business information with someone, it doesn't mean you need to share it with everyone else. This data may be sensitive information like: financial and banking information (in my case), maybe medical records, payroll information. So who get's to even see the information? in my case, with financial and banking information there are laws to abide for, and most of the time you'll eventually get a visit from an external auditor that will demand you to get him a detailed story of not just the data but who inserted or modified the data and when.</p>
+
+        <p><span class="key">Redundancy:</span> Better known as duplication of data, it's not really a bad thing to have. You are going to be asked to create backups of the business data and there are tools that help you do just that. Having copies of the data is not a bad thing. But redundancy in the data itself is. If you have a product catalog and the price for a product says it costs $100 and another entry says it's $50, which one is it? Maybe this information is owned by two or more departments or offices and one product cost one price in one site and have an updated price in another, so which one is the true price?</p>
+
+        <p><span class="key">Importance:</span> It may already happened to you, you get a network disconnection that makes you lose a game match, or just an energy failure that makes you lose half an hour of work or even a day of work. Maybe the program crashed and you lose a two hour audio recording, and that's annoying and inconvinient. But if you lose the payment record of your customers, or the medical records of a patiente or just lose the banking transactions of an entire day, that's not inconvinient, that's unacceptable. That's better know as critical data, in many businesses, data is the business, you can't lose anything, not a single change.</p>
+
+        <p>You may have some or all of these problems, so databases are not about where to put your data, we can already do that. Databases are about what comes next: </p>
+
+        <h3>Solutions</h3>
+        <ul>
+            <li>Scalable: The date may grow and still be able to be manageable.</li>
+            <li>Accessible: The data needs to be easly inserted and updated by many people at the same time.</li>
+            <li>Accurate: Keeping the data consistent with reality.</li>
+            <li>Secure: Who gets to see the information and who get's to write the information. And know who did what and when.</li>
+            <li>Consistent: There must be one version of the truth.</li>
+            <li>Permanent: Once you make a change in the data, that change remains permanently, unless the business decides it's time to delete it.</li>
+        </ul>
+
+        <p>This is what a database offers. A structure to not just store our data, but to define a place to put our data and even rules to abide when entering data. The rules are yours to decide. Maybe your needs are different from someone else's, maybe you have a lot of information and need a way to store it and search for it in a quick manner. Maybe you have much less data but you need to log everything that happens to it. And because of this that if you had only worked with a database that somebody else designed and build, you may be losing sight of what's really important and think that a database is like a spreadsheet but it's more difficult to use. And that's not it at all. The solutions a database offers are ofthen overlooked by many just because they are not really visible to a lot of people not even software developers. The security, the multi user support, the indexing and easy or searching. This and many more valuable features are offered by databases, they can even survide shutdown or crashes and remain reliable after a reboot.
+        </p>
+    <h2 id="id2">Exploring databases and database management systems</h2>
+    <p>Let's get one thing out of the way. The Database definition, which is casually used by programmers and database administrators alike. A programmer may say that SQL server is a database, that Oracle or MySQL are databases, but those are not databases, those are <span class="key">database management systems</span>, better know as <span class="key">DBMS</span>, those are not actual databases.</p>
+
+    <p>So a database is your data and your rules for that data. A database management system is software that you install in order to create databases and specify the rules that you want enforced on the data on those databases. Database manager software, like sql server management studio from Microsoft, are actually not even including the database engine itself. A database engine is the software that actually host and runs your database and it's data. The database management system connects to the database engine to retrieve, insert and modify data.</p>
+
+    <h3>Common Database Management Systems</h3>
+    <ul>
+        <li>Oracle</li>
+        <li>SQL server</li>
+        <li>MySQL</li>
+        <li>MariaDB</li>
+        <li>PostgreSQL</li>
+        <li>MongoDB</li>
+        <li>Amazon Aurora</li>
+        <li>DB2</li>
+    </ul>
+
+    <p>This list mentions several database management systems on the market. The good news is that you don't need to learn every single one of them. Actually these database management systems have more in common than differences between them, that's why if you learn a relational database system, you can jump into another one with almost no training.</p>
+
+    <p>In an ideal world, the company you work for would have a single database engine and one or several databases to manage aspects of the business. There would be a human resources database that would manage all data related to the human resources department; there would be an inventory database that would manage inventory and so fort, yet in the real world this doesn't happen.</p>
+
+    <p>In the real world, you'll find that a company has not one or two but several database engines, managing one or two aspects of the business at once. For example the human resources department has two or three databases and each on a different database engine, this happens because the human resources department is using software that requieres certain database engine to work. You may also get into a company that bought yet another company and they brought their databases alongside everything else, it's very common to have two or three databases that seems to do the same thing but with different data. It's going to be your job to allow that data to be shared with other people in the company and do this transparently as if it was a single database instead of three different customers databases. This may seem chaotic at first, but with what you will learn here, you won't have much problems.</p>
+
+    <p>In the end you will not need all the details of every single relational database engine out there to be able to do the job right.</p>
+
+    <h3>NoSQL databases</h3>
+    <p>As I mentioned before, there are NoSQL databases that work great for storing data and documents in a not structured way. But I think they should be called &quot;NotJustSQL databases&quot; since whoever hires you will assume that you already understand relational databases. and this happens because relational databases use the same principals regarding to how to structure your data. so don't believe that you can skip relational databases entirely by jumping straight into NoSQL databases.</p>
 
 </body>
 
