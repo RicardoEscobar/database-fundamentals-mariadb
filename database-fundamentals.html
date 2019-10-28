@@ -342,6 +342,61 @@
     <p>A foreign key is not unique, this means that one or more employees can have the same departmentID value. In your case, Josh and James belong to the Sales department, so they share the same departmentID value. With this the database enforces the rule that a department may have one or more employees or even none, since we don't have anyone for the Warehouse department on the employee table.</p>
 
     <h2 id="id4">Describing many-to-many relationships</h2>
+    <p>The most common relationship between tables is the one to many relationship. But eventually you'll have the need to join two tables in a many to many relationship, but explaining what a many to many relationship is may prove difficult. Let's see an example first.</p>
+
+    <p>Imagine you have a contract table that stores basic information about the sales contracts of a company that sells cars. It may look like this:</p>
+
+    <img  class="mobicontent" src="images/table/contract_table.PNG" width="1100" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">contractID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salesman name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Customer name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Sign date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Amount</span><br><span
+                    style="font-weight:700">(number)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Cadence Brown</td>
+            <td class="table_data">13/7/2017</td>
+            <td class="table_data">15000</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">27000</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Walter Jones</td>
+            <td class="table_data">16/2/2018</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Bruce Wallace</td>
+            <td class="table_data">21/8/2014</td>
+            <td class="table_data">35000</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">25/9/2019</td>
+            <td class="table_data">20000</td>
+        </tr>
+    </table>
 
     <h2 id="id5">Transactions and the ACID test</h2>
 
