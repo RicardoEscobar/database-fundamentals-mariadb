@@ -384,3 +384,40 @@ div.bounding_box
 /* Hide mobi specific content for other device */
 .mobicontent
 { display: none; }
+
+/* table data */
+.defaultcontent.table_group {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+
+.table_group td {
+	padding:10px 5px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:black;
+}
+
+.table_group th {
+	font-weight:normal;
+	padding:10px 5px;
+	border-style:solid;
+	border-width:1px;
+	overflow:hidden;
+	word-break:normal;
+	border-color:black;
+}
+
+.table_group .table_data {
+	text-align:center;
+	vertical-align:top
+}
+
+.table_group .column_name {
+	background-color:#656565;
+	color:#ffffff;
+	text-align:center;
+	vertical-align:top
+}
