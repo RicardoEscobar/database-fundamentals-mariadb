@@ -184,7 +184,7 @@
 
     <p>Now let's say we have a department table that's basically a <span class="key">catalog</span> or a list of company departments.</p>
 
-    <img  class="mobicontent" src="images/table/department_table.PNG" width="460" height="257"/>
+    <img  class="mobicontent" src="images/table/department_table.PNG" width="656" height="612"/>
     <table class="defaultcontent table_group">
         <tr>
             <th class="column_name"><span style="font-weight:700">departmentID</span><br><span
@@ -216,7 +216,7 @@
 
     <p>Both tables have a natural relationship, a department may have one or many employees. This is better known as a one to one relationship. But the reverse is not true, one employee may belong to one department, but not two or more. So in order to enforce this rule, we use primary keys as a reference to know which department does an employee belong to. So, how do you do this? You may think that adding a new column with the department name in the employee table may be a good idea, like this:</p>
 
-    <img  class="mobicontent" src="images/table/employee_table_3.PNG" width="460" height="257"/>
+    <img  class="mobicontent" src="images/table/employee_table_3.PNG" width="1570" height="516"/>
     <table class="defaultcontent table_group">
         <tr>
             <th class="column_name"><span style="font-weight:700">employeeID</span><br><span
@@ -279,7 +279,7 @@
     <h3>Foreign key</h3>
     <p>I propose the use of something called a <span class="key">foreign key</span>, that's basically a key that belongs to another table but it's used on the table you want to have a reference of. Let's get back at the employee table and add a new colum called &quot;departmentID&quot; which is an index on the employee table, but is not unique. This is a foreign key, because it's a key that comes from another table.</p>
 
-    <img  class="mobicontent" src="images/table/employee_table_4.PNG" width="460" height="257"/>
+    <img  class="mobicontent" src="images/table/employee_table_4.PNG" width="1100" height="516"/>
     <table class="defaultcontent table_group">
         <tr>
             <th class="column_name"><span style="font-weight:700">employeeID</span><br><span
@@ -336,6 +336,10 @@
             <td class="highlight">3</td>
         </tr>
     </table>
+
+    <p>The departmentID column is a foreign key from the department table (greyed out). This means that the actual value must exist on the department table as a primary key of the department table. This allows the database enforce the rule that an employee belongs to a single department and just one department, since you can't put more than one single value at the departmentID column on either the employee table or the department table.</p>
+
+    <p>A foreign key is not unique, this means that one or more employees can have the same departmentID value. In your case, Josh and James belong to the Sales department, so they share the same department id value. Like this, the database enforces the rule that a department may have one or more employees or even none, since we don't have anyone for the Warehouse department on the employee table.</p>
 
     <h2 id="id4">Describing many-to-many relationships</h2>
 
