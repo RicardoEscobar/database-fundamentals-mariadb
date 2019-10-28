@@ -182,7 +182,7 @@
         </tr>
     </table>
 
-    <p>Now let's say we have a department table that is basically a <span class="key">catalog</span> or a list of company departments.</p>
+    <p>Now let's say we have a department table that's basically a <span class="key">catalog</span> or a list of company departments.</p>
 
     <img  class="mobicontent" src="images/table/department_table.PNG" width="460" height="257"/>
     <table class="defaultcontent table_group">
@@ -213,6 +213,71 @@
                 <td class="table_data">Information technologies</td>
         </tr>
     </table>
+
+    <p>Both tables have a natural relationship, a department may have one or many employees. This is better known as a one to one relationship. But the reverse is not true, one employee may belong to one department, but not two or more. So in order to enforce this rule, we use primary keys as a reference to know which department does an employee belong to. So, how do you do this? You may think that adding a new column with the department name in the employee table may be a good idea, like this:</p>
+
+    <img  class="mobicontent" src="images/table/employee_table_3.PNG" width="460" height="257"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">employeeID</span><br><span
+                style="font-weight:700">(unique number)</span></th>
+            <th class="column_name"><span style="font-weight:700">First name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Last name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Hire date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salary</span><br><span
+                    style="font-weight:700">(number)</span></th>
+            <th class="column_name"><span style="font-weight:700">Department name</span><br><span
+                style="font-weight:700">(text)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh</td>
+            <td class="table_data">Smith</td>
+            <td class="table_data">1/5/2019</td>
+            <td class="table_data">50000</td>
+            <td class="table_data">Sales</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Adam</td>
+            <td class="table_data">Black</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">70000</td>
+            <td class="table_data">Accounting</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">1/9/2015</td>
+            <td class="table_data">70000</td>
+            <td class="table_data">Information technologies</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James</td>
+            <td class="table_data">Stuart</td>
+            <td class="table_data">20/3/2017</td>
+            <td class="table_data">50000</td>
+            <td class="table_data">Sales</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">27/10/2019</td>
+            <td class="table_data">200000</td>
+            <td class="table_data">Human resources</td>
+        </tr>
+    </table>
+
+    <p>But this approach often leads to problems down the road. What happens if the sales department splits into &quot;North sales&quot; and &quot;West sales&quot;? You may find hard to rename everyone's department by just using text searches. Or what if you need to move more than one person from one department to another? As you can see, you may generate unnecessary <span class="key">technical debt</span>, by implementing what seems like a simple solution at first glance. Not to mention that this is repeating data we already got on two different places, which makes updating it quite difficult, since we must ensure that the data is consistent, so any update on the data must be the same in whatever place it is stored. If you add &quot;North sales&quot; and &quot;West sales&quot; departments to the department table, you need to update the employee table to assign a new department to the sales employees.</p>
+
+    <h3>Foreign key</h3>
+    <p>I propose the use of something called a <span class="key">foreign key</span>, that's basically a key that belongs to another table but it's used on the table you want to have a reference of. Let's get back at the employee table</p>
 
     <h2 id="id4">Describing many-to-many relationships</h2>
 
