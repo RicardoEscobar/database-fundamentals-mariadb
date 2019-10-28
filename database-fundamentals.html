@@ -339,7 +339,7 @@
 
     <p>The departmentID column is a foreign key from the department table (greyed out). This means that the actual value must exist on the department table as a primary key of the department table. This allows the database enforce the rule that an employee belongs to a single department and just one department, since you can't put more than one single value at the departmentID column on either the employee table or the department table.</p>
 
-    <p>A foreign key is not unique, this means that one or more employees can have the same departmentID value. In your case, Josh and James belong to the Sales department, so they share the same department id value. Like this, the database enforces the rule that a department may have one or more employees or even none, since we don't have anyone for the Warehouse department on the employee table.</p>
+    <p>A foreign key is not unique, this means that one or more employees can have the same departmentID value. In your case, Josh and James belong to the Sales department, so they share the same departmentID value. With this the database enforces the rule that a department may have one or more employees or even none, since we don't have anyone for the Warehouse department on the employee table.</p>
 
     <h2 id="id4">Describing many-to-many relationships</h2>
 
