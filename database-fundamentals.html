@@ -431,6 +431,69 @@
         </tr>
     </table>
 
+    <p>So at first glance, you may think that this can be solved by a one to one relationship, just adding a foreign key to the contract table should be enough. So we get this contract table:</p>
+
+    <img  class="mobicontent" src="images/table/file_table_2.PNG" width="1012" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">contractID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salesman name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Customer name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Sign date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Amount</span><br><span
+                    style="font-weight:700">(number)</span></th>
+            <th class="column_name"><span style="font-weight:700">fileID</span><br><span
+                style="font-weight:700">(foreign key)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Cadence Brown</td>
+            <td class="table_data">13/7/2017</td>
+            <td class="table_data">15000</td>
+            <td class="table_data">1</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">27000</td>
+            <td class="table_data">2</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Walter Jones</td>
+            <td class="table_data">16/2/2018</td>
+            <td class="table_data">70000</td>
+            <td class="table_data">3</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Bruce Wallace</td>
+            <td class="table_data">21/8/2014</td>
+            <td class="table_data">35000</td>
+            <td class="table_data">4</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">25/9/2019</td>
+            <td class="table_data">20000</td>
+            <td class="table_data">5</td>
+        </tr>
+    </table>
+
+    <p></p>
+
     <h2 id="id5">Transactions and the ACID test</h2>
 
     <h2 id="id6">Introduction to Structured Query Language (SQL)</h2>
