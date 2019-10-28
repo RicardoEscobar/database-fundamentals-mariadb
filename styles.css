@@ -1,3 +1,23 @@
+/* Hack font for code blocks */
+@font-face {
+	font-family: "Hack-Regular";
+	src: url("font/Hack-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Hack-Bold";
+	src: url("font/Hack-Bold.ttf");
+}
+
+@font-face {
+	font-family: "Hack-BoldItalic";
+	src: url("font/Hack-BoldItalic.ttf");
+}
+
+@font-face {
+	font-family: "Hack-Italic";
+	src: url("font/Hack-Italic.ttf");
+}
 
 /* Key words in the text are made bold italic */
 .key
@@ -9,6 +29,7 @@
 /* sample code text are colored */
 code
 {
+	font-family: "Hack-Regular", monospace;
 	color:#BC0A63;
 }
 
