@@ -443,6 +443,13 @@ div.bounding_box
 	vertical-align:top
 }
 
+.table_group .highlight{
+	background-color:#9b9898;
+	color:#ffffff;
+	text-align:center;
+	vertical-align:top
+}
+
 .table_group .column_name {
 	background-color:#656565;
 	color:#ffffff;
