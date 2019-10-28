@@ -11,16 +11,689 @@
 <body>
     <h1>Database fundamentals</h1>
     <div class="exampleBorder">
-        <p class="null_text_indent"><span class="dropcaps1">D</span>ropcaps and intro paragraph.</p>
+        <p class="null_text_indent"><span class="dropcaps1">A</span> database is build from tables. A database without tables is useless, not only there is no data, but there is no place to put data in. A database is build from tables. A database without tables is useless, not only there is no data, but there is no place to put data in.</p>
     </div>
 
     <h2 id="id1">The features of a relational database</h2>
 
+    <p>So a table is the fundamental building block of any database. A table is a formal structure to store data. It defines not just where the data should be stored, but what kind of data can be stored. A table may contain a lot of information but always about the same thing. A database table is often represented as a spreadsheet, with columns and rows, a table may contain several rows of information, but differently to a spreadsheet, a database table can't hold whatever kind of data into it.</p>
+
+    <p>A table specifies types of information for every column on the table. So if you wish to insert text data in a colum for storing customer's names, you need a text colum for that, If you wish to store a date, you need a date type column for that too. These are part of the rules you wish to impose on the data, seems limiting at first, but imagine that you want a column for storing product prices, then you would not like to have text like &quot;$15.50&quot; instead of a number like &quot;15.5&quot;. This is because even if they seem the same, you can't just add text data without parsing such text as a number first. It can be done, but why bother?.</p>
+
+    <img  class="mobicontent" src="images/table/employee_table.PNG" width="250" height="370"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">First name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Last name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Hire date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salary</span><br><span
+                    style="font-weight:700">(number)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">Josh</td>
+            <td class="table_data">Smith</td>
+            <td class="table_data">1/5/2019</td>
+            <td class="table_data">50000</td>
+        </tr>
+        <tr>
+            <td class="table_data">Adam</td>
+            <td class="table_data">Black</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">1/9/2015</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">James</td>
+            <td class="table_data">Stuart</td>
+            <td class="table_data">20/3/2017</td>
+            <td class="table_data">50000</td>
+        </tr>
+    </table>
+
+    <p>As simple as this employee table may seem, the reality is that there are rules in place and the database engine it's going to enforce them. For example, the hire date may only store date data types, you can't just type whatever text you want there and hope that the database knows what to do with it. In fact, the database engine won't allow you to insert anything that's not an actual date into that field.</p>
+
+    <p>You may look at the employee table and think that this looks pretty much like a spreadsheet, but there is nothing farther away from the truth. Spreadsheets are created with a different use case in mind. Database tables are not serving just to a single user, but to a multitude of users, and the data stored must comply to the database's rules or else, error and exceptions will arise.</p>
+
     <h2 id="id2">Exploring unique values and primary keys</h2>
+    <p>Let's say that you have a table with actual data on it, you may wonder how do we find anything? That's why we have unique values called <span class="key">keys</span>. A key is a value that allows you to identify an specific row on a table, it's actual value it's unique for that specific row on the entire table and does not appear for that column on a different row, that's why it's called <span class="key">unique value</span>. Sometimes an actual column on the table contains a <span class="key">natural key</span> like an employee number, which by nature of the data itself, it's just a single value for a single employee.</p>
+
+    <p>To illustrate, look at the employee table. We don't have a unique column but we have unique values, not two people are named the same, yet that doesn't mean we should just enforce this as a rule at the database engine level. Even if we find an employee by selecting him or her by his or her name, the reality is that if the company is big enough you may find yourself with two or more people sharing the same name. Below you have a new version of the employee table.</p>
+
+    <img  class="mobicontent" src="images/table/employee_table_2.PNG" width="460" height="257"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">employeeID</span><br><span
+                style="font-weight:700">(unique number)</span></th>
+            <th class="column_name"><span style="font-weight:700">First name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Last name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Hire date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salary</span><br><span
+                    style="font-weight:700">(number)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh</td>
+            <td class="table_data">Smith</td>
+            <td class="table_data">1/5/2019</td>
+            <td class="table_data">50000</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Adam</td>
+            <td class="table_data">Black</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">1/9/2015</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James</td>
+            <td class="table_data">Stuart</td>
+            <td class="table_data">20/3/2017</td>
+            <td class="table_data">50000</td>
+        </tr>
+        <tr>
+                <td class="table_data">5</td>
+                <td class="table_data">Jessica</td>
+                <td class="table_data">White</td>
+                <td class="table_data">27/10/2019</td>
+                <td class="table_data">200000</td>
+        </tr>
+    </table>
+
+    <p>There is a new column named <span class="key">employeeID</span> which is a unique column, that means that whatever value you insert into that column, will be unique for that particular row on the entire table. There is also a new employee named <span class="key">Jessica White</span> and even when there is already another employee sharing the same name, you can see that her <span class="key">hire date</span> and <span class="key">salary</span> are not the same. Yet if you want to find a particular individual, you should use select the employee by his or her <span class="key">employeeID</span> value.</p>
+
+    <p>The employeeID column is used as an identifier, so you can look for a specific employee just by using this value as a search parameter. This is explained in detail in the chapter: <a href="querying.html">Querying.</a></p>
+
+    <p>You may find yourself that the date itself may not contain a natural ID key, for example an email address is often used as a natural key on many tables, but what happens if the date itself doesn't have a natural key value? You need to create one yourself like in the case of employeeID, most database engines already help you doing this, they even ask if you want to define a <span class="key">primary key</span>, which is basically the database unique identifier for that table's rows. To finish, I recommend you to always create a primary key yourself, even when you have data like security number or even a unique email address, often you'll find out that having a reliable primary key that is unique to the table and inserted automatically by the database engine, will save you a lot of problems in the future, specially when we get into the chapter: <a href="normalization.html">Normalization.</a></p>
+
+    <p>Primary keys are really important, they not only identify each row on a table, they are also used to link tables together.</p>
 
     <h2 id="id3">Defining table relationships</h2>
+    <p>While making tables is vital to create databases, yet another vital feature of databases is the ability to create relationships between tables. This happens because data is related, you don't need to look too deep in order to see a relationship between a bank account table and a bank transfer table, or between an employee table and a department table.</p>
+
+    <p>In this example, I have an employee table with a primary key <span class="key">employeeID</span>.</p>
+
+    <img  class="mobicontent" src="images/table/employee_table_2.PNG" width="460" height="257"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">employeeID</span><br><span
+                style="font-weight:700">(unique number)</span></th>
+            <th class="column_name"><span style="font-weight:700">First name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Last name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Hire date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salary</span><br><span
+                    style="font-weight:700">(number)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh</td>
+            <td class="table_data">Smith</td>
+            <td class="table_data">1/5/2019</td>
+            <td class="table_data">50000</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Adam</td>
+            <td class="table_data">Black</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">1/9/2015</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James</td>
+            <td class="table_data">Stuart</td>
+            <td class="table_data">20/3/2017</td>
+            <td class="table_data">50000</td>
+        </tr>
+        <tr>
+                <td class="table_data">5</td>
+                <td class="table_data">Jessica</td>
+                <td class="table_data">White</td>
+                <td class="table_data">27/10/2019</td>
+                <td class="table_data">200000</td>
+        </tr>
+    </table>
+
+    <p>Now let's say we have a department table that's basically a <span class="key">catalog</span> or a list of company departments.</p>
+
+    <img  class="mobicontent" src="images/table/department_table.PNG" width="656" height="612"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">departmentID</span><br><span
+                style="font-weight:700">(unique number)</span></th>
+            <th class="column_name"><span style="font-weight:700">Name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Accounting</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Sales</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Human resources</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">Warehouse</td>
+        </tr>
+        <tr>
+                <td class="table_data">5</td>
+                <td class="table_data">Information technologies</td>
+        </tr>
+    </table>
+
+    <p>Both tables have a natural relationship, a department may have one or many employees. This is better known as a one to one relationship. But the reverse is not true, one employee may belong to one department, but not two or more. So in order to enforce this rule, we use primary keys as a reference to know which department does an employee belong to. So, how do you do this? You may think that adding a new column with the department name in the employee table may be a good idea, like this:</p>
+
+    <img  class="mobicontent" src="images/table/employee_table_3.PNG" width="1570" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">employeeID</span><br><span
+                style="font-weight:700">(unique number)</span></th>
+            <th class="column_name"><span style="font-weight:700">First name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Last name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Hire date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salary</span><br><span
+                    style="font-weight:700">(number)</span></th>
+            <th class="column_name"><span style="font-weight:700">Department name</span><br><span
+                style="font-weight:700">(text)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh</td>
+            <td class="table_data">Smith</td>
+            <td class="table_data">1/5/2019</td>
+            <td class="table_data">50000</td>
+            <td class="table_data">Sales</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Adam</td>
+            <td class="table_data">Black</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">70000</td>
+            <td class="table_data">Accounting</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">1/9/2015</td>
+            <td class="table_data">70000</td>
+            <td class="table_data">Information technologies</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James</td>
+            <td class="table_data">Stuart</td>
+            <td class="table_data">20/3/2017</td>
+            <td class="table_data">50000</td>
+            <td class="table_data">Sales</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">27/10/2019</td>
+            <td class="table_data">200000</td>
+            <td class="table_data">Human resources</td>
+        </tr>
+    </table>
+
+    <p>But this approach often leads to problems down the road. What happens if the sales department splits into &quot;North sales&quot; and &quot;West sales&quot;? You may find hard to rename everyone's department by just using text searches. Or what if you need to move more than one person from one department to another? As you can see, you may generate unnecessary <span class="key">technical debt</span>, by implementing what seems like a simple solution at first glance. Not to mention that this is repeating data we already got on two different places, which makes updating it quite difficult, since we must ensure that the data is consistent, so any update on the data must be the same in whatever place it is stored. If you add &quot;North sales&quot; and &quot;West sales&quot; departments to the department table, you need to update the employee table to assign a new department to the sales employees.</p>
+
+    <h3>Foreign key</h3>
+    <p>I propose the use of something called a <span class="key">foreign key</span>, that's basically a key that belongs to another table but it's used on the table you want to have a reference of. Let's get back at the employee table and add a new colum called &quot;departmentID&quot; which is an index on the employee table, but is not unique. This is a foreign key, because it's a key that comes from another table.</p>
+
+    <img  class="mobicontent" src="images/table/employee_table_4.PNG" width="1100" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">employeeID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">First name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Last name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Hire date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salary</span><br><span
+                    style="font-weight:700">(number)</span></th>
+            <th class="column_name"><span style="font-weight:700">departmentID</span><br><span
+                style="font-weight:700">(foreign key)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh</td>
+            <td class="table_data">Smith</td>
+            <td class="table_data">1/5/2019</td>
+            <td class="table_data">50000</td>
+            <td class="highlight">2</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Adam</td>
+            <td class="table_data">Black</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">70000</td>
+            <td class="highlight">1</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">1/9/2015</td>
+            <td class="table_data">70000</td>
+            <td class="highlight">5</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James</td>
+            <td class="table_data">Stuart</td>
+            <td class="table_data">20/3/2017</td>
+            <td class="table_data">50000</td>
+            <td class="highlight">2</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">27/10/2019</td>
+            <td class="table_data">200000</td>
+            <td class="highlight">3</td>
+        </tr>
+    </table>
+
+    <p>The departmentID column is a foreign key from the department table (greyed out). This means that the actual value must exist on the department table as a primary key of the department table. This allows the database enforce the rule that an employee belongs to a single department and just one department, since you can't put more than one single value at the departmentID column on either the employee table or the department table.</p>
+
+    <p>A foreign key is not unique, this means that one or more employees can have the same departmentID value. In your case, Josh and James belong to the Sales department, so they share the same departmentID value. With this the database enforces the rule that a department may have one or more employees or even none, since we don't have anyone for the Warehouse department on the employee table.</p>
 
     <h2 id="id4">Describing many-to-many relationships</h2>
+    <p>The most common relationship between tables is the one to many relationship. But eventually you'll have the need to join two tables in a many to many relationship, but explaining what a many to many relationship is may prove difficult. Let's see an example first.</p>
+
+    <p>Imagine you have a contract table that stores basic information about the sales contracts of a company that sells cars. It may look like this:</p>
+
+    <img  class="mobicontent" src="images/table/contract_table.PNG" width="1012" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">contractID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salesman name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Customer name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Sign date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Amount</span><br><span
+                    style="font-weight:700">(number)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Cadence Brown</td>
+            <td class="table_data">13/7/2017</td>
+            <td class="table_data">15000</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">27000</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Walter Jones</td>
+            <td class="table_data">16/2/2018</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Bruce Wallace</td>
+            <td class="table_data">21/8/2014</td>
+            <td class="table_data">35000</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">25/9/2019</td>
+            <td class="table_data">20000</td>
+        </tr>
+    </table>
+
+    <p>And now imagine that you are asked to store the URL of the scanned contract as a PDF file. So we only care about the actual URL not the file itself so we make another table called &quot;file&quot; and it may look like this:</p>
+
+    <img  class="mobicontent" src="images/table/file_table.PNG" width="780" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">fileID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">URL</span><br><span
+                    style="font-weight:700">(text)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">https://s3.amazonaws.com/contract1.PDF</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">https://s3.amazonaws.com/contract2.PDF</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">https://s3.amazonaws.com/contract3.PDF</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">https://s3.amazonaws.com/contract4.PDF</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">https://s3.amazonaws.com/contract5.PDF</td>
+        </tr>
+    </table>
+
+    <p>So at first glance, you may think that this can be solved by a one to one relationship, just adding a foreign key to the contract table should be enough. So we get this contract table:</p>
+
+    <img  class="mobicontent" src="images/table/file_table_2.PNG" width="1210" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">contractID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salesman name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Customer name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Sign date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Amount</span><br><span
+                    style="font-weight:700">(number)</span></th>
+            <th class="column_name"><span style="font-weight:700">fileID</span><br><span
+                style="font-weight:700">(foreign key)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Cadence Brown</td>
+            <td class="table_data">13/7/2017</td>
+            <td class="table_data">15000</td>
+            <td class="table_data">1</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">27000</td>
+            <td class="table_data">2</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Walter Jones</td>
+            <td class="table_data">16/2/2018</td>
+            <td class="table_data">70000</td>
+            <td class="table_data">3</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Bruce Wallace</td>
+            <td class="table_data">21/8/2014</td>
+            <td class="table_data">35000</td>
+            <td class="table_data">4</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">25/9/2019</td>
+            <td class="table_data">20000</td>
+            <td class="table_data">5</td>
+        </tr>
+    </table>
+
+    <p>In this example, we solved our problem. But imagine that a week after, you're asked to store not just the contracts but the car's invoices as well. So now you may think about doing what I call <span class="key">quick and dirty code</span>. And let's say you decide to add another column to the contracts table to basically do the same thing that you did on a one to one relationship, you add a new column named &quot;invoiceID&quot;, and since the fileID column is not so descriptive now, you may think on rename it to &quot;contractID&quot; so you end up doing this change to the contract table:</p>
+
+    <img  class="mobicontent" src="images/table/file_table_3.PNG" width="1012" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">contractID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salesman name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Customer name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Sign date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Amount</span><br><span
+                    style="font-weight:700">(number)</span></th>
+            <th class="column_name"><span style="font-weight:700">contractID</span><br><span
+                style="font-weight:700">(foreign key)</span></th>
+            <th class="column_name"><span style="font-weight:700">invoiceID</span><br><span
+                style="font-weight:700">(foreign key)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Cadence Brown</td>
+            <td class="table_data">13/7/2017</td>
+            <td class="table_data">15000</td>
+            <td class="table_data">1</td>
+            <td class="table_data">6</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">27000</td>
+            <td class="table_data">2</td>
+            <td class="table_data">7</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Walter Jones</td>
+            <td class="table_data">16/2/2018</td>
+            <td class="table_data">70000</td>
+            <td class="table_data">3</td>
+            <td class="table_data">8</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Bruce Wallace</td>
+            <td class="table_data">21/8/2014</td>
+            <td class="table_data">35000</td>
+            <td class="table_data">4</td>
+            <td class="table_data">9</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">25/9/2019</td>
+            <td class="table_data">20000</td>
+            <td class="table_data">5</td>
+            <td class="table_data">10</td>
+        </tr>
+    </table>
+
+    <p>This practice is discouraged and has a name <span class="key">repeating groups</span>, the issue here is that the next time you're asked to store the car's pictures into the file table, now you don't know if they are storing one, two, three or more than six pictures of the car. So adding repeating groups forces you to alter the table's structure every time someone adds just one more file to the max limit of files that you allow.</p>
+
+    <p>Another quick and dirty solution that you may think about is to have just one fileID column on the contract table and make it a text column, so you may have several comma separated values inside, so you may think, it's just one column and I may have one or more values there, I just need to retrieve the text and somehow parse it as numbers. This also is highly discouraged and also has a name <span class="key">multivalued field</span> may Edgar Frank Codd forbid, you ever have to face a database plagued by this artifact. This practice makes very difficult to join related tables and tends to introduce inconsistencies in the data itself. For example, if you delete a record on the file table, the database engine does not have an mechanism to delete the entry from the fileID column in the contract table, so this has to be deleted too manually or remain as a broken reference. Instead I suggest an easier way to solve this issue without inserting unnecessary technical debt.</p>
+
+    <h3>The many to many relationship</h3>
+    <p>We can't stablish a many to many relationship directly, we do it indirectly. First we get back to our original contract and file tables:</p>
+
+    <img  class="mobicontent" src="images/table/contract_table.PNG" width="1012" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">contractID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salesman name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Customer name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Sign date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Amount</span><br><span
+                    style="font-weight:700">(number)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Cadence Brown</td>
+            <td class="table_data">13/7/2017</td>
+            <td class="table_data">15000</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">27000</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Walter Jones</td>
+            <td class="table_data">16/2/2018</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James Stuart</td>
+            <td class="table_data">Bruce Wallace</td>
+            <td class="table_data">21/8/2014</td>
+            <td class="table_data">35000</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">Josh Smith</td>
+            <td class="table_data">Andrea McCloud</td>
+            <td class="table_data">25/9/2019</td>
+            <td class="table_data">20000</td>
+        </tr>
+    </table>
+
+    <br>
+
+    <img  class="mobicontent" src="images/table/file_table.PNG" width="780" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">fileID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">URL</span><br><span
+                    style="font-weight:700">(text)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">https://s3.amazonaws.com/contract1.PDF</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">https://s3.amazonaws.com/contract2.PDF</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">https://s3.amazonaws.com/contract3.PDF</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">https://s3.amazonaws.com/contract4.PDF</td>
+        </tr>
+        <tr>
+            <td class="table_data">5</td>
+            <td class="table_data">https://s3.amazonaws.com/contract5.PDF</td>
+        </tr>
+    </table>
+
+    <p>Now we need to relate them using a third table which only purpose of existing is to make a many to many relationship between the contract and file tables. This table can be named as a combination of both the contract and file tables for example &quot;contract_file&quot; table. The name is not important as long as this table has two columns defined as foreign keys pointing at each the contract and the file tables. First let's define the table like this:</p>
+
+    <img  class="mobicontent" src="images/table/contract_file_table.PNG" width="404" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">contractID</span><br><span
+                style="font-weight:700">(foreign key)</span></th>
+            <th class="column_name"><span style="font-weight:700">fileID</span><br><span
+                style="font-weight:700">(foreign key)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">1</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">2</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">3</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">6</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">4</td>
+        </tr>
+    </table>
+
+    <p>This table has a one to many relationship with both the contract table and the file table which can be visualized like this:</p>
+
+    <img src="images/table/contract_file_relationship.PNG" width="1174" height="222">
+
+    <p>This diagram means that the contract table have a one to many relationship with the contract_file table; the contract_file table have a one to many relationship with the file table.</p>
+
+    <p>This way, even if a contract have one contract, an invoice and six pictures, you can just add as many files as you want and the database structure remains the same, you don't even need to add a column to the contract or file tables. You may even relate more tables this way and you even have the flexibility to add additional information to the contract_file table like &quot;upload date&quot; and then you would be able to have the actual date when the file was uploaded for example.</p>
+
+    <p>Finally a definition: <span class="italic_lighter_text">A many-to-many relationship occurs when multiple records in a table are associated with multiple records in another table.</span></p>
 
     <h2 id="id5">Transactions and the ACID test</h2>
 
