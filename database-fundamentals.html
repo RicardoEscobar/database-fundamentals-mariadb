@@ -686,7 +686,14 @@
     </table>
 
     <p>This table has a one to many relationship with both the contract table and the file table which can be visualized like this:</p>
+
     <img src="images/table/contract_file_relationship.PNG" width="1174" height="222">
+
+    <p>This diagram means that the contract table have a one to many relationship with the contract_file table; the contract_file table have a one to many relationship with the file table.</p>
+
+    <p>This way, even if a contract have one contract, an invoice and six pictures, you can just add as many files as you want and the database structure remains the same, you don't even need to add a column to the contract or file tables. You may even relate more tables this way and you even have the flexibility to add additional information to the contract_file table like &quot;upload date&quot; and then you would be able to have the actual date when the file was uploaded for example.</p>
+
+    <p>Finally a definition: <span class="italic_lighter_text">A many-to-many relationship occurs when multiple records in a table are associated with multiple records in another table.</span></p>
 
     <h2 id="id5">Transactions and the ACID test</h2>
 
