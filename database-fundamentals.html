@@ -60,12 +60,12 @@
 
     <p>As simple as this employee table may seem, the reality is that there are rules in place and the database engine it's going to enforce them. For example, the hire date may only store date data types, you can't just type whatever text you want there and hope that the database knows what to do with it. In fact, the database engine won't allow you to insert anything that's not an actual date into that field.</p>
 
-    <p>You may look at the employee table and think that this looks pretty much like a spreadsheet, but there is nothing farther away from the truth. Spreadsheets are created with a different use case in mind. Databse tables are not serving just to a single user, but to a multitude of users, and the data stored must comply to the database's rules or else, error and exceptions will arise.</p>
+    <p>You may look at the employee table and think that this looks pretty much like a spreadsheet, but there is nothing farther away from the truth. Spreadsheets are created with a different use case in mind. Database tables are not serving just to a single user, but to a multitude of users, and the data stored must comply to the database's rules or else, error and exceptions will arise.</p>
 
     <h2 id="id2">Exploring unique values and primary keys</h2>
-    <p>Let's say that you have a table with actual data on it, you may wonder how do we find anything? That's why we have unique values called <span class="key">keys</span>. A key is a value that allows you to identify an specific row on a table, it's actual value it's unique for that specific row on the entire table and does not apper for that column on a different row, that's why it's called <span class="key">unique value</span>. Sometimes an actual column on the table contains a <span class="key">natural key</span> like an employee number, which by nature of the data itself, it's just a single value for a single employee.</p>
+    <p>Let's say that you have a table with actual data on it, you may wonder how do we find anything? That's why we have unique values called <span class="key">keys</span>. A key is a value that allows you to identify an specific row on a table, it's actual value it's unique for that specific row on the entire table and does not appear for that column on a different row, that's why it's called <span class="key">unique value</span>. Sometimes an actual column on the table contains a <span class="key">natural key</span> like an employee number, which by nature of the data itself, it's just a single value for a single employee.</p>
 
-    <p>To ilustrate, look at the employee table. We don't have a unique column but we have unique values, not two people are named the same, yet that doesn't mean we should just enforce this as a rule at the database engine level. Even if we find an employee by selecting him or her by his or her name, the reality is that if the company is big enough you may find yourself with two or more people sharing the same name. Below you have a new version of the employee table.</p>
+    <p>To illustrate, look at the employee table. We don't have a unique column but we have unique values, not two people are named the same, yet that doesn't mean we should just enforce this as a rule at the database engine level. Even if we find an employee by selecting him or her by his or her name, the reality is that if the company is big enough you may find yourself with two or more people sharing the same name. Below you have a new version of the employee table.</p>
 
     <img  class="mobicontent" src="images/table/employee_table_2.PNG" width="460" height="257"/>
     <table class="defaultcontent table_group">
@@ -127,6 +127,92 @@
     <p>Primary keys are really important, they not only identify each row on a table, they are also used to link tables together.</p>
 
     <h2 id="id3">Defining table relationships</h2>
+    <p>While making tables is vital to create databases, yet another vital feature of databases is the ability to create relationships between tables. This happens because data is related, you don't need to look too deep in order to see a relationship between a bank account table and a bank transfer table, or between an employee table and a department table.</p>
+
+    <p>In this example, I have an employee table with a primary key <span class="key">employeeID</span>.</p>
+
+    <img  class="mobicontent" src="images/table/employee_table_2.PNG" width="460" height="257"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">employeeID</span><br><span
+                style="font-weight:700">(unique number)</span></th>
+            <th class="column_name"><span style="font-weight:700">First name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Last name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">Hire date</span><br><span
+                    style="font-weight:700">(date)</span></th>
+            <th class="column_name"><span style="font-weight:700">Salary</span><br><span
+                    style="font-weight:700">(number)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Josh</td>
+            <td class="table_data">Smith</td>
+            <td class="table_data">1/5/2019</td>
+            <td class="table_data">50000</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Adam</td>
+            <td class="table_data">Black</td>
+            <td class="table_data">23/7/2018</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Jessica</td>
+            <td class="table_data">White</td>
+            <td class="table_data">1/9/2015</td>
+            <td class="table_data">70000</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">James</td>
+            <td class="table_data">Stuart</td>
+            <td class="table_data">20/3/2017</td>
+            <td class="table_data">50000</td>
+        </tr>
+        <tr>
+                <td class="table_data">5</td>
+                <td class="table_data">Jessica</td>
+                <td class="table_data">White</td>
+                <td class="table_data">27/10/2019</td>
+                <td class="table_data">200000</td>
+        </tr>
+    </table>
+
+    <p>Now let's say we have a department table that is basically a <span class="key">catalog</span> or a list of company departments.</p>
+
+    <img  class="mobicontent" src="images/table/department_table.PNG" width="460" height="257"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">departmentID</span><br><span
+                style="font-weight:700">(unique number)</span></th>
+            <th class="column_name"><span style="font-weight:700">Name</span><br><span
+                    style="font-weight:700">(text)</span></th>
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Accounting</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Sales</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Human resources</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">Warehouse</td>
+        </tr>
+        <tr>
+                <td class="table_data">5</td>
+                <td class="table_data">Information technologies</td>
+        </tr>
+    </table>
 
     <h2 id="id4">Describing many-to-many relationships</h2>
 
