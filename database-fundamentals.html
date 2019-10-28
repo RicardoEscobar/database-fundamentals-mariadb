@@ -11,11 +11,10 @@
 <body>
     <h1>Database fundamentals</h1>
     <div class="exampleBorder">
-        <p class="null_text_indent"><span class="dropcaps1">D</span>ropcaps and intro paragraph.</p>
+        <p class="null_text_indent"><span class="dropcaps1">A</span> database is build from tables. A database without tables is useless, not only there is no data, but there is no place to put data in. A database is build from tables. A database without tables is useless, not only there is no data, but there is no place to put data in.</p>
     </div>
 
     <h2 id="id1">The features of a relational database</h2>
-    <p>A database is build from tables. A database without tables is useless, not only there is no data, but there is no place to put data in.</p>
 
     <p>So a table is the fundamental building block of any database. A table is a formal structure to store data. It defines not just where the data should be stored, but what kind of data can be stored. A table may contain a lot of information but always about the same thing. A database table is often represented as a spreadsheet, with columns and rows, a table may contain several rows of information, but differently to a spreadsheet, a database table can't hold whatever kind of data into it.</p>
 
@@ -59,7 +58,12 @@
         </tr>
     </table>
 
+    <p>As simple as this employee table may seem, the reality is that there are rules in place and the database engine it's going to enforce them. For example, the hire date may only store date data types, you can't just type whatever text you want there and hope that the database knows what to do with it. In fact, the database engine won't allow you to insert anything that's not an actual date into that field.</p>
+
+    <p>You may look at the employee table and think that this looks pretty much like a spreadsheet, but there is nothing farther away from the truth. Spreadsheets are created with a different use case in mind. Databse tables are not serving just to a single user, but to a multitude of users, and the data stored must comply to the database's rules or else, error and exceptions will arise.</p>
+
     <h2 id="id2">Exploring unique values and primary keys</h2>
+    <p>Let's say that you have a table with actual data on it, you may wonder how do we find anything?</p>
 
     <h2 id="id3">Defining table relationships</h2>
 
