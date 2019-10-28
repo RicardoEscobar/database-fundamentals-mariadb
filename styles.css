@@ -1,22 +1,30 @@
 /* Hack font for code blocks */
 @font-face {
 	font-family: "Hack-Regular";
-	src: url("Hack-Regular.ttf");
+	font-style: normal;
+	font-weight: normal;
+	src: url(fonts/hack/Hack-Regular.ttf);
 }
 
 @font-face {
 	font-family: "Hack-Bold";
-	src: url("Hack-Bold.ttf");
+	font-style: normal;
+	font-weight: bold;
+	src: url(fonts/hack/Hack-Bold.ttf);
 }
 
 @font-face {
 	font-family: "Hack-BoldItalic";
-	src: url("Hack-BoldItalic.ttf");
+	font-style: italic;
+	font-weight: bold;
+	src: url(fonts/hack/Hack-BoldItalic.ttf);
 }
 
 @font-face {
 	font-family: "Hack-Italic";
-	src: url("Hack-Italic.ttf");
+	font-style: italic;
+	font-weight: normal;
+	src: url(fonts/hack/Hack-Italic.ttf);
 }
 
 /* Key words in the text are made bold italic */
@@ -30,7 +38,6 @@
 code
 {
 	font-family: "Hack-Regular", monospace;
-	color:#BC0A63;
 }
 
 /* Styles for different types of borders */
