@@ -696,10 +696,46 @@
     <p>Finally a definition: <span class="italic_lighter_text">A many-to-many relationship occurs when multiple records in a table are associated with multiple records in another table.</span></p>
 
     <h2 id="id5">Transactions and the ACID test</h2>
+    <p>You'll eventually need rules in place to make sure that the data is managed properly, specially if you need a series of operations to be executed as a single unit. That's where <span class="key">transactions</span> come in.</p>
 
     <h3>Transactions</h3>
+    <p>Transactions are a collection of data operations that are to be executed as a single unit. Their need comes from the fact that most operations are not just with a single table at a time, most of the operations on a database are build from several units or single unit operations.</p>
 
     <h3>Bank transaction</h3>
+    <p>Imagine that you have a banking database, and you have a balance table, this table contains just two columns, a balanceID and a balance amount column.</p>
+
+    <img  class="mobicontent" src="images/table/account_table.PNG" width="404" height="516"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">accountID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">balance</span><br><span
+                style="font-weight:700">(number)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">1500.00</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">3200.00</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">150.00</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">478.50</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">14500.90</td>
+        </tr>
+    </table>
+
+    <p>On this table, we need to transfer funds from one account to another, so you need to withdraw funds from one account and deposit them into another one in order to get a successful transaction. If you withdraw funds and there is a power failure before you can actually deposit the funds, you are going to be in a very bad position if the client is missing $2000.00 but the funds never made it to the desired destination. So a database transaction makes a rule that either both operations are executed successfully or none are executed at all.</p>
 
     <h3>Rollback a transaction</h3>
 
