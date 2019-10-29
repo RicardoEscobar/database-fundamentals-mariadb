@@ -704,7 +704,7 @@
     <h3>Bank transaction</h3>
     <p>Imagine that you have a banking database, and you have a balance table, this table contains just two columns, a balanceID and a balance amount column.</p>
 
-    <img  class="mobicontent" src="images/table/account_table.PNG" width="404" height="516"/>
+    <img  class="mobicontent" src="images/table/account_table.PNG" width="192" height="261"/>
     <table class="defaultcontent table_group">
         <tr>
             <th class="column_name"><span style="font-weight:700">accountID</span><br><span
@@ -761,6 +761,59 @@
     <p><span class="key">Durable.</span> When a transaction is committed successfully, the data remains committed even after a system failure.</p>
 
     <h2 id="id6">Introduction to Structured Query Language (SQL)</h2>
+    <p>Working with databases is not like programming, yet you still need to describe what the database should do. In the context of databases, we have a <span class="key">Structured Query Language</span> that helps you to achieve whatever need you may have with the structure of your databases and their data.</p>
+
+    <p>SQL is not a procedural language, you don't write or describe how to get things done like a regular programming language. Instead you use this language to describe the outcome of what you want. For example, imagine you have a product table, with basic information about the groceries catalog of a supermarket, you that table may look like this:</p>
+
+    <img  class="mobicontent" src="images/table/product_table.PNG" width="295" height="258"/>
+    <table class="defaultcontent table_group">
+        <tr>
+            <th class="column_name"><span style="font-weight:700">productID</span><br><span
+                style="font-weight:700">(primary key)</span></th>
+            <th class="column_name"><span style="font-weight:700">name</span><br><span
+                style="font-weight:700">(text)</span></th>
+            <th class="column_name"><span style="font-weight:700">price</span><br><span
+                style="font-weight:700">(number)</span></th>
+
+        </tr>
+        <tr>
+            <td class="table_data">1</td>
+            <td class="table_data">Milk</td>
+            <td class="table_data">15.00</td>
+        </tr>
+        <tr>
+            <td class="table_data">2</td>
+            <td class="table_data">Eggs</td>
+            <td class="table_data">32.00</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Ketchup sauce</td>
+            <td class="table_data">5.00</td>
+        </tr>
+        <tr>
+            <td class="table_data">3</td>
+            <td class="table_data">Beer</td>
+            <td class="table_data">4.50</td>
+        </tr>
+        <tr>
+            <td class="table_data">4</td>
+            <td class="table_data">Sugar</td>
+            <td class="table_data">7.90</td>
+        </tr>
+    </table>
+
+    <p>So how do I get the products that are less than $10.00? You just ask the database as you may ask a clerk at the super market:</p>
+
+    <p style="text-align: center;">&quot;What products cost $10.00 or less?&quot;</p>
+
+    <p>You may use SQL in order to ask the database what result do you want, then the how it's done it's managed by the database engine. For this example you may write SQL code like this:</p>
+
+    <center><code><b>SELECT</b> * <b>FROM</b> product <b>WHERE</b> price &gt;= 10;</code></center>
+
+    <p>This is a SQL statement, that defines what output you desire to get, you don't need to specify how it's done, you just query the database for information and the database engine will provide it for you. This is the power of a database, the power to just define what you want and get it.</p>
+
+    <p>In the rest of the book, we'll work with a lot of SQL code and you'll end up learning a powerful tool that'll be useful for decades to come.</p>
 </body>
 
 </html>
