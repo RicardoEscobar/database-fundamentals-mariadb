@@ -738,8 +738,27 @@
     <p>On this table, we need to transfer funds from one account to another, so you need to withdraw funds from one account and deposit them into another one in order to get a successful transaction. If you withdraw funds and there is a power failure before you can actually deposit the funds, you are going to be in a very bad position if the client is missing $2000.00 but the funds never made it to the desired destination. So a database transaction makes a rule that either both operations are executed successfully or none are executed at all.</p>
 
     <h3>Rollback a transaction</h3>
+    <p>So what happens if the power goes out and the deposit operation never went through? The entire transaction rollbacks and it was like it never happened. This ensures that the data remains consistent.</p>
+
+    <p>Rolling back a transaction is not a bad thing, databases become are sophisticated really fast and ensuring that everything goes right is mandatory. So a rollback is a low price to pay in order to get a second chance at the same operation. The benefits of transactions are more evident with every operation that forms part of the transaction.</p>
 
     <h3>ACID Atomic consistent isolated durable</h3>
+    <p>In order to have a proper database transaction, it has to have these features:</p>
+
+    <ul>
+        <li>Atomic.</li>
+        <li>Consistent.</li>
+        <li>Isolated.</li>
+        <li>Durable.</li>
+    </ul>
+
+    <p><span class="key">Atomic.</span> The transaction and all it's operations are considered as a single unit, either they all execute successfully or none are executed at all.</p>
+
+    <p><span class="key">Consistent.</span> The transaction can take the database from a valid state into another valid state. All data written by the transaction must comply with the database's rules.</p>
+
+    <p><span class="key">Isolated.</span> When several transactions are executed at the same time, they may not affect the same data, so the transaction locks the data that it's writing, not another transaction may access the data that this transaction is actually writing. If the operation can't continue because of a lock from another transaction, the current one will rollback.</p>
+
+    <p><span class="key">Durable.</span> When a transaction is committed successfully, the data remains committed even after a system failure.</p>
 
     <h2 id="id6">Introduction to Structured Query Language (SQL)</h2>
 </body>
