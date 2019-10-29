@@ -140,6 +140,11 @@ span.text_style3
 	text-transform:capitalize;
 }
 
+h1
+{
+	text-align:center;
+}
+
 p.text_align_center
 {
 	text-align:center;
