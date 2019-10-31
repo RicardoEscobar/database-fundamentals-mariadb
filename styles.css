@@ -228,12 +228,6 @@ img.margin
 	margin:1%
 }
 
-/* Style to have background image */
-bgimg1
-{
-	background:url(images/fl3.jpg);
-}
-
 /* Different colors of borders to images*/
 img.border_color_red
 {
@@ -387,27 +381,6 @@ div.bounding_box
 {
 	background-color:#736F6E;
 	padding:15px;
-}
-
-.backgroundImageResize
-{
-	background:url(images/fl1.png);
-	background-size: 5em 5em;
-	padding:1em;
-}
-
-.backgroundRight
-{
-	background:url(images/flower4.jpg) no-repeat;
-	background-position:right;
-	padding:1em;
-}
-.backgroundLeft
-{
-	background:url(images/flower4.jpg) no-repeat;
-	background-position:left;
-	padding:1em;
-	background-origin:content-box;
 }
 
 /* Used to display and hide the the contents specific to device */
