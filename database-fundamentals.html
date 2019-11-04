@@ -10,6 +10,7 @@
 
 <body>
     <h1>Database fundamentals</h1>
+
     <div class="exampleBorder">
         <p class="null_text_indent"><span class="dropcaps1">A</span> database is build from tables. A database without tables is useless, not only there is no data, but there is no place to put data in. A database is build from tables. A database without tables is useless, not only there is no data, but there is no place to put data in.</p>
     </div>
@@ -63,6 +64,7 @@
     <p>You may look at the employee table and think that this looks pretty much like a spreadsheet, but there is nothing farther away from the truth. Spreadsheets are created with a different use case in mind. Database tables are not serving just to a single user, but to a multitude of users, and the data stored must comply to the database's rules or else, error and exceptions will arise.</p>
 
     <h2 id="id2">Exploring unique values and primary keys</h2>
+
     <p>Let's say that you have a table with actual data on it, you may wonder how do we find anything? That's why we have unique values called <span class="key">keys</span>. A key is a value that allows you to identify an specific row on a table, it's actual value it's unique for that specific row on the entire table and does not appear for that column on a different row, that's why it's called <span class="key">unique value</span>. Sometimes an actual column on the table contains a <span class="key">natural key</span> like an employee number, which by nature of the data itself, it's just a single value for a single employee.</p>
 
     <p>To illustrate, look at the employee table. We don't have a unique column but we have unique values, not two people are named the same, yet that doesn't mean we should just enforce this as a rule at the database engine level. Even if we find an employee by selecting him or her by his or her name, the reality is that if the company is big enough you may find yourself with two or more people sharing the same name. Below you have a new version of the employee table.</p>
@@ -127,6 +129,7 @@
     <p>Primary keys are really important, they not only identify each row on a table, they are also used to link tables together.</p>
 
     <h2 id="id3">Defining table relationships</h2>
+
     <p>While making tables is vital to create databases, yet another vital feature of databases is the ability to create relationships between tables. This happens because data is related, you don't need to look too deep in order to see a relationship between a bank account table and a bank transfer table, or between an employee table and a department table.</p>
 
     <p>In this example, I have an employee table with a primary key <span class="key">employeeID</span>.</p>
@@ -277,6 +280,7 @@
     <p>But this approach often leads to problems down the road. What happens if the sales department splits into &quot;North sales&quot; and &quot;West sales&quot;? You may find hard to rename everyone's department by just using text searches. Or what if you need to move more than one person from one department to another? As you can see, you may generate unnecessary <span class="key">technical debt</span>, by implementing what seems like a simple solution at first glance. Not to mention that this is repeating data we already got on two different places, which makes updating it quite difficult, since we must ensure that the data is consistent, so any update on the data must be the same in whatever place it is stored. If you add &quot;North sales&quot; and &quot;West sales&quot; departments to the department table, you need to update the employee table to assign a new department to the sales employees.</p>
 
     <h3>Foreign key</h3>
+
     <p>I propose the use of something called a <span class="key">foreign key</span>, that's basically a key that belongs to another table but it's used on the table you want to have a reference of. Let's get back at the employee table and add a new colum called &quot;departmentID&quot; which is an index on the employee table, but is not unique. This is a foreign key, because it's a key that comes from another table.</p>
 
     <img  class="mobicontent" src="images/table/employee_table_4.PNG" width="1100" height="516"/>
@@ -342,6 +346,7 @@
     <p>A foreign key is not unique, this means that one or more employees can have the same departmentID value. In your case, Josh and James belong to the Sales department, so they share the same departmentID value. With this the database enforces the rule that a department may have one or more employees or even none, since we don't have anyone for the Warehouse department on the employee table.</p>
 
     <h2 id="id4">Describing many-to-many relationships</h2>
+
     <p>The most common relationship between tables is the one to many relationship. But eventually you'll have the need to join two tables in a many to many relationship, but explaining what a many to many relationship is may prove difficult. Let's see an example first.</p>
 
     <p>Imagine you have a contract table that stores basic information about the sales contracts of a company that sells cars. It may look like this:</p>
@@ -565,6 +570,7 @@
     <p>Another quick and dirty solution that you may think about is to have just one fileID column on the contract table and make it a text column, so you may have several comma separated values inside, so you may think, it's just one column and I may have one or more values there, I just need to retrieve the text and somehow parse it as numbers. This also is highly discouraged and also has a name <span class="key">multivalued field</span> may Edgar Frank Codd forbid, you ever have to face a database plagued by this artifact. This practice makes very difficult to join related tables and tends to introduce inconsistencies in the data itself. For example, if you delete a record on the file table, the database engine does not have an mechanism to delete the entry from the fileID column in the contract table, so this has to be deleted too manually or remain as a broken reference. Instead I suggest an easier way to solve this issue without inserting unnecessary technical debt.</p>
 
     <h3>The many to many relationship</h3>
+
     <p>We can't stablish a many to many relationship directly, we do it indirectly. First we get back to our original contract and file tables:</p>
 
     <img  class="mobicontent" src="images/table/contract_table.PNG" width="1012" height="516"/>
@@ -696,12 +702,15 @@
     <p>Finally a definition: <span class="italic_lighter_text">A many-to-many relationship occurs when multiple records in a table are associated with multiple records in another table.</span></p>
 
     <h2 id="id5">Transactions and the ACID test</h2>
+
     <p>You'll eventually need rules in place to make sure that the data is managed properly, specially if you need a series of operations to be executed as a single unit. That's where <span class="key">transactions</span> come in.</p>
 
     <h3>Transactions</h3>
+
     <p>Transactions are a collection of data operations that are to be executed as a single unit. Their need comes from the fact that most operations are not just with a single table at a time, most of the operations on a database are build from several units or single unit operations.</p>
 
     <h3>Bank transaction</h3>
+
     <p>Imagine that you have a banking database, and you have a balance table, this table contains just two columns, a balanceID and a balance amount column.</p>
 
     <img  class="mobicontent" src="images/table/account_table.PNG" width="192" height="261"/>
@@ -738,11 +747,13 @@
     <p>On this table, we need to transfer funds from one account to another, so you need to withdraw funds from one account and deposit them into another one in order to get a successful transaction. If you withdraw funds and there is a power failure before you can actually deposit the funds, you are going to be in a very bad position if the client is missing $2000.00 but the funds never made it to the desired destination. So a database transaction makes a rule that either both operations are executed successfully or none are executed at all.</p>
 
     <h3>Rollback a transaction</h3>
+
     <p>So what happens if the power goes out and the deposit operation never went through? The entire transaction rollbacks and it was like it never happened. This ensures that the data remains consistent.</p>
 
     <p>Rolling back a transaction is not a bad thing, databases become are sophisticated really fast and ensuring that everything goes right is mandatory. So a rollback is a low price to pay in order to get a second chance at the same operation. The benefits of transactions are more evident with every operation that forms part of the transaction.</p>
 
     <h3>ACID Atomic consistent isolated durable</h3>
+
     <p>In order to have a proper database transaction, it has to have these features:</p>
 
     <ul>
@@ -761,6 +772,7 @@
     <p><span class="key">Durable.</span> When a transaction is committed successfully, the data remains committed even after a system failure.</p>
 
     <h2 id="id6">Introduction to Structured Query Language (SQL)</h2>
+
     <p>Working with databases is not like programming, yet you still need to describe what the database should do. In the context of databases, we have a <span class="key">Structured Query Language</span> that helps you to achieve whatever need you may have with the structure of your databases and their data.</p>
 
     <p>SQL is not a procedural language, you don't write or describe how to get things done like a regular programming language. Instead you use this language to describe the outcome of what you want. For example, imagine you have a product table, with basic information about the groceries catalog of a supermarket, you that table may look like this:</p>
