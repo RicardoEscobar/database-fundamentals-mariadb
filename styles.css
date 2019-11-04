@@ -145,6 +145,17 @@ h1
 	text-align:center;
 }
 
+h2
+{
+	text-align:left;
+}
+
+h3
+{
+	text-align:left;
+	font-style: italic;
+}
+
 p.text_align_center
 {
 	text-align:center;
